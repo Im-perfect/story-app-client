@@ -1,17 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect, Link, withRouter } from "react-router-dom";
 import { signout } from "../actions/player";
 
 class HeaderBar extends React.Component {
-  // signUp = () => {
-  //   //return <Redirect to="/signup" />;
-  //   this.props.history.push("/signup");
-  // };
 
-  signOut = () => {
+  signOut = (event) => {
     this.props.signout();
-    return <Redirect to="/" />;
+    this.props.history.push('/game/create')
   };
 
   render() {
@@ -42,7 +38,7 @@ const mapStateToProps = state => ({
   signedIn: !!state.currentPlayer
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   { signout }
-)(HeaderBar);
+)(HeaderBar));

@@ -1,5 +1,5 @@
 import { SIGN_OUT } from "../actions/player";
-const currentPlayerToken = window.localStorage.getItem("jwt") || "e14u" || null;
+const currentPlayerToken = window.localStorage.getItem("jwt") || "somefaketoken" || null;
 
 const reducer = (state = currentPlayerToken, action = {}) => {
   switch (action.type) {
