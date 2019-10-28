@@ -23,6 +23,8 @@ class LoginFormContainer extends React.Component {
       username: "",
       password: ""
     });
+    //if login success
+    this.props.history.push('/game')
   };
 
   render() {

@@ -22,6 +22,8 @@ class SignupFormContainer extends React.Component {
       username: "",
       password: ""
     });
+    //if signup success
+    this.props.history.push("/game");
   };
 
   render() {

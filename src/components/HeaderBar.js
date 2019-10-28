@@ -7,7 +7,7 @@ class HeaderBar extends React.Component {
 
   signOut = (event) => {
     this.props.signout();
-    this.props.history.push('/game/create')
+    this.props.history.push('/')
   };
 
   render() {
