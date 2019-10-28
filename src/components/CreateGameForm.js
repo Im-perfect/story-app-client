@@ -23,7 +23,7 @@ class CreateGameForm extends Component {
       character: "",
       verb: ""
     });
-    this.props.history.push("/game");
+    this.props.history.push(`/game/${this.props.gameId}`);
   };
 
   onChange = event => {
@@ -80,7 +80,7 @@ class CreateGameForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({gameId: state.lobby[state.lobby.length-1].id});
 
 const mapDispatchToProps = { addLobby };
 
