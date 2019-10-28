@@ -11,7 +11,7 @@ const lobby = [
     }
   },
   {
-    id: 1,
+    id: 3,
     name: "test name111",
     player1: 5,
     player2: 24,
@@ -26,7 +26,17 @@ const lobby = [
 const reducer = (state = lobby, action = {}) => {
   switch (action.type) {
     case "ADD_LOBBY":
-      return state;
+      return [ ...state, {
+        id: 1,
+        name: "test name111",
+        player1: 5,
+        player2: null,
+        status: "waiting",
+        story: {
+          title: action.gameInfo.title,
+          description: action.gameInfo.description
+        }
+      }];
     default:
       return state;
   }

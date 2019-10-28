@@ -12,8 +12,8 @@ class Lobby extends React.Component {
     </li>
   );
   
-  addLobby = (event) => {
-    //this.props.addLobby()
+  handleAddLobby = (event) => {
+    //this.props.handleAddLobby()
     //return <Redirect to='/game/create' />
     this.props.history.push('/game/create')
   }
@@ -25,7 +25,7 @@ class Lobby extends React.Component {
       <div>
         <h1>Lobby</h1>
         <ul>{this.props.games.map(this.renderGame)}</ul>
-        <button onClick={this.addLobby}><span>+</span>Create a new game</button>
+        <button onClick={this.handleAddLobby}><span>+</span>Create a new game</button>
       </div>
     );
   }

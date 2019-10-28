@@ -29,7 +29,7 @@ export const login = (username, password) => (dispatch, getState) => {
     .catch(console.error);
 };
 
-export const signout= () => (dispatch) => {
+export const signout = () => (dispatch) => {
     dispatch({
         type: SIGN_OUT
     })

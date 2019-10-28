@@ -5,7 +5,7 @@ import HeaderBar from './components/HeaderBar'
 import Lobby from './components/Lobby'
 import Signup from './components/Signup'
 import Login from './components/Login'
-import { CreateGameForm } from './components/CreateGameForm';
+import CreateGameForm from './components/CreateGameForm';
 
 function App() {
   return (
