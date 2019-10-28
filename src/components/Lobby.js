@@ -13,9 +13,7 @@ class Lobby extends React.Component {
   );
   
   handleAddLobby = (event) => {
-    //this.props.handleAddLobby()
-    //return <Redirect to='/game/create' />
-    this.props.history.push('/game/create')
+    this.props.history.push('/create-game')
   }
 
   joinGame = (gameId) => <Redirect to={`/games/${gameId}`} />
