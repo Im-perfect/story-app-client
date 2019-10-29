@@ -28,7 +28,7 @@ class Lobby extends React.Component {
       <p>{game.name}</p>
       {/* <h3>{game.title}</h3>
       <p>{game.description}</p> */}
-      {game.status === "waiting" ? <button onClick={this.joinGame}>Join</button> : <h3>FULL</h3>}
+      {game.status === null || "waiting" ? <button onClick={this.joinGame}>Join</button> : <h3>FULL</h3>}
     </li>
   );
   
