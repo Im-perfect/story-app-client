@@ -10,7 +10,7 @@ import GameContainer from './components/GameContainer';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <HeaderBar />
       <Route path='/signup' exact component={Signup} />
       <Route path='/login' exact component={Login} />
