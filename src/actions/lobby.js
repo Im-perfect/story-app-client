@@ -1,8 +1,7 @@
 export const ADD_LOBBY = "ADD_LOBBY"
 
 export const addLobby = (gameInfo) => (dispatch) => {
-    //post request
-    //get request
+    //post request => response.id etc.
     dispatch({
         type: ADD_LOBBY,
         gameInfo
