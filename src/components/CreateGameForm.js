@@ -13,14 +13,14 @@ class CreateGameForm extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    const storyInfo = {
+    const gameInfo = {
       name: this.state.name,
       title: this.state.title,
       description: `Once upon a time, at ${this.state.place}, a ${this.state.character} ${this.state.verb}.`
     };
 
     (async () => {
-      const id = await this.props.addLobby(storyInfo);
+      const id = await this.props.addLobby(gameInfo, this.props.playerJWT);
       this.props.history.push(`/game/${id}`);
     })();
 
@@ -98,7 +98,7 @@ class CreateGameForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  //gameId: state.currentGame.id || null
+  playerJWT: state.currentPlayer
 });
 
 const mapDispatchToProps = { addLobby };

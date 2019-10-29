@@ -1,5 +1,5 @@
 import request from "superagent";
-import {baseUrl} from './url'
+import { baseUrl } from "./url";
 //const baseUrl = "https://glacial-plateau-27629.herokuapp.com"; //"http://localhost:4000"
 
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
@@ -15,7 +15,7 @@ export const signup = (username, password) => (dispatch, getState) => {
       console.log("Create user?", response);
       dispatch({ type: SIGNUP_SUCCESS, payload: response.body.jwt });
     })
-    .catch(error=> console.log(error));
+    .catch(error => console.log(error));
 };
 
 export const login = (username, password) => (dispatch, getState) => {
@@ -30,8 +30,14 @@ export const login = (username, password) => (dispatch, getState) => {
     .catch(console.error);
 };
 
-export const signout = () => (dispatch) => {
-    dispatch({
-        type: SIGN_OUT
-    })
-  };
+export const signout = () => dispatch => {
+  dispatch({
+    type: SIGN_OUT
+  });
+};
+
+export const enterGame = () => dispatch => {
+  dispatch({
+    type: "ENTER_GAME"
+  });
+};

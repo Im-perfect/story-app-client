@@ -3,10 +3,11 @@ import request from "superagent";
 
 export const ADD_LOBBY = "ADD_LOBBY";
 
-export const addLobby = gameInfo => (dispatch, getState) => {
+export const addLobby = (gameInfo, playerJWT) => (dispatch, getState) => {
   //post request => response.id etc.
   return request
     .post(`${baseUrl}/lobbies`)
+    .set("playerJWT", playerJWT)
     .send(gameInfo)
     .then(res => {
         console.log("res.body", res.body)
