@@ -19,6 +19,7 @@ class Lobby extends React.Component {
   joinGame = (gameId) => <Redirect to={`/games/${gameId}`} />
 
   render() {
+    if (!this.props.isLoggedIn) return null
     return (
       <div>
         <h1>Lobby</h1>
@@ -29,7 +30,7 @@ class Lobby extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({ games: state.lobby, currentPlayer: state.currentPlayer });
+const mapStateToProps = (state) => ({ games: state.lobby, isLoggedIn: !!state.currentPlayer });
 
 export default connect(
   mapStateToProps

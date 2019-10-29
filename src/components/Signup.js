@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import LoginForm from "./LoginForm";
+import { signup } from "../actions/player";
 
 class SignupFormContainer extends React.Component {
   state = {
@@ -48,4 +49,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(SignupFormContainer);
+export default connect(
+  mapStateToProps,
+  { signup }
+)(SignupFormContainer);

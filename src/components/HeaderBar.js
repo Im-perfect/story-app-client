@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Redirect, Link, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { signout } from "../actions/player";
 
 class HeaderBar extends React.Component {
