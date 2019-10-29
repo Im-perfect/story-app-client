@@ -1,5 +1,6 @@
 import request from "superagent";
-const baseUrl = "https://glacial-plateau-27629.herokuapp.com"; //"http://localhost:4000"
+import {baseUrl} from './url'
+//const baseUrl = "https://glacial-plateau-27629.herokuapp.com"; //"http://localhost:4000"
 
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";

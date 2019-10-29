@@ -23,7 +23,7 @@ const lobby = [
   }
 ];
 
-const reducer = (state = lobby, action = {}) => {
+const reducer = (state = [], action = {}) => {
   switch (action.type) {
     case "ADD_LOBBY":
       return [
@@ -40,6 +40,8 @@ const reducer = (state = lobby, action = {}) => {
           }
         }
       ];
+    case "ADD_LOBBIES":
+      return action.payload;
     case "SIGN_OUT":
       return [];
     default:

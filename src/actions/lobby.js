@@ -7,3 +7,8 @@ export const addLobby = (gameInfo) => (dispatch) => {
         gameInfo
     })
   };
+
+export const addLobbies = (payload) => ({
+    type: "ADD_LOBBIES",
+    payload
+})
