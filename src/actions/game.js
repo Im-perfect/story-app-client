@@ -25,3 +25,8 @@ export const getGame = (id) => (dispatch, getState) => {
         })
     })
 }
+
+export const updateCurrentGame = (payload) => ({
+    type: "UPDATE_CURRENT_GAME",
+    payload
+})
