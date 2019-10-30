@@ -55,7 +55,6 @@ class CreateGameForm extends Component {
 
   handleRandom = async () => {
     const res = await fillRandom();
-    //console.log("from handle", res)
     this.setState(res);
   };
 

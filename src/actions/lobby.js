@@ -45,15 +45,5 @@ export const addLobbies = payload => ({
 
 export const fillRandom = async () => {
   const res = await request.get(`${baseUrl}/description/random`);
-  //console.log("RES", res)
   return res.body;
-  // .then(res => {
-  //   console.log("fromre quest", res.body);
-  // //   dispatch({
-  // //     type: "UPDATE_DESCRIPTION",
-  // //     payload: res.body
-  // //   })
-  //     return res.body
-  // })
-  // .catch(console.error);
 };
