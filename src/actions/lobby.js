@@ -27,12 +27,12 @@ export const join = (gameId, playerJWT) => (dispatch, getState) => {
     .put(`${baseUrl}/lobbies/${gameId}`)
     .set("playerJWT", playerJWT)
     .then(res => {
-      console.log("res.body", res.body);
+      //console.log("res.body", res.body);
       dispatch({
         type: ADD_LOBBY,
         payload: res.body
       });
-      console.log("body id", res.body.id);
+      //console.log("body id", res.body.id);
       return res.body.id;
     })
     .catch(console.error);
@@ -43,22 +43,17 @@ export const addLobbies = payload => ({
   payload
 });
 
-export const fillRandom = () => (dispatch, getState) => { 
-    const a = {
-            place: "random",
-            character: "random",
-            verb: "random",
-            noun: "random"
-        }
-        return  a
-//   return request
-//     .get(`${baseUrl}/description/random`)
-//     .then(res => {
-//         // dispatch({
-//         //     type: "GET_RANDOM_DESC",
-//         //     description: res.body
-//         // })
-//        //res.body
-//     })
-//     .catch(console.error);
+export const fillRandom = async () => {
+  const res = await request.get(`${baseUrl}/description/random`);
+  //console.log("RES", res)
+  return res.body;
+  // .then(res => {
+  //   console.log("fromre quest", res.body);
+  // //   dispatch({
+  // //     type: "UPDATE_DESCRIPTION",
+  // //     payload: res.body
+  // //   })
+  //     return res.body
+  // })
+  // .catch(console.error);
 };

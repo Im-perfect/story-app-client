@@ -4,6 +4,10 @@ const reducer = (state = {}, action = {}) => {
       return action.payload;
     case "ADD_LOBBY":
       return action.payload;
+    // case "UPDATE_DESCRIPTION":
+    //     return {
+    //         ...state, 
+    //     }
     case "SIGN_OUT":
       return {};
     default:

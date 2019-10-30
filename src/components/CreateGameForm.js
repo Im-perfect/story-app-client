@@ -53,9 +53,9 @@ class CreateGameForm extends Component {
     });
   };
 
-  handleRandom = () => {
-    const res = this.props.fillRandom();
-    console.log(res)
+  handleRandom = async () => {
+    const res = await fillRandom();
+    //console.log("from handle", res)
     this.setState(res);
   };
 
@@ -135,7 +135,7 @@ const mapStateToProps = state => ({
   playerJWT: state.currentPlayer
 });
 
-const mapDispatchToProps = { addLobby, fillRandom };
+const mapDispatchToProps = { addLobby };
 
 export default connect(
   mapStateToProps,
