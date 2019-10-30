@@ -4,6 +4,7 @@ import { addLobby } from "../actions/lobby";
 
 class CreateGameForm extends Component {
   state = {
+    name: "",
     title: "",
     place: "",
     character: "",
@@ -12,18 +13,24 @@ class CreateGameForm extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    const storyInfo = {
+    const gameInfo = {
+      name: this.state.name,
       title: this.state.title,
       description: `Once upon a time, at ${this.state.place}, a ${this.state.character} ${this.state.verb}.`
     };
-    this.props.addLobby(storyInfo);
+
+    (async () => {
+      const id = await this.props.addLobby(gameInfo, this.props.playerJWT);
+      this.props.history.push(`/game/${id}`);
+    })();
+
     this.setState({
+      name: "",
       title: "",
       place: "",
       character: "",
       verb: ""
     });
-    this.props.history.push(`/game/${this.props.gameId}`);
   };
 
   onChange = event => {
@@ -37,7 +44,17 @@ class CreateGameForm extends Component {
       <div>
         <form onSubmit={this.onSubmit}>
           <label>
-            Title
+            Room Name
+            <input
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={this.onChange}
+            />
+          </label>
+          <br />
+          <label>
+            Story Title
             <input
               type="text"
               name="title"
@@ -80,7 +97,9 @@ class CreateGameForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({gameId: state.lobby[state.lobby.length-1].id});
+const mapStateToProps = state => ({
+  playerJWT: state.currentPlayer
+});
 
 const mapDispatchToProps = { addLobby };
 

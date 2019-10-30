@@ -23,20 +23,28 @@ const lobby = [
   }
 ];
 
-const reducer = (state = lobby, action = {}) => {
+const reducer = (state = [], action = {}) => {
   switch (action.type) {
     case "ADD_LOBBY":
-      return [ ...state, {
-        id: 1,
-        name: "test name111",
-        player1: 5,
-        player2: null,
-        status: "waiting",
-        story: {
-          title: action.gameInfo.title,
-          description: action.gameInfo.description
-        }
-      }];
+      return [
+        ...state,
+        action.payload
+        // {
+        //   id: 1,
+        //   name: "test name111",
+        //   player1: 5,
+        //   player2: null,
+        //   status: "waiting",
+        //   story: {
+        //     title: action.gameInfo.title,
+        //     description: action.gameInfo.description
+        //   }
+        // }
+      ];
+    case "ADD_LOBBIES":
+      return action.payload;
+    case "SIGN_OUT":
+      return [];
     default:
       return state;
   }

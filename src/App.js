@@ -6,15 +6,17 @@ import Lobby from './components/Lobby'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import CreateGameForm from './components/CreateGameForm';
+import GameContainer from './components/GameContainer';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <HeaderBar />
       <Route path='/signup' exact component={Signup} />
       <Route path='/login' exact component={Login} />
       <Route path='/game' exact component={Lobby} />
-      <Route path='/game/create' exact component={CreateGameForm} />
+      <Route path='/create-game' exact component={CreateGameForm} />
+      <Route path='/game/:id' exact component={GameContainer} />
     </div>
   );
 }
