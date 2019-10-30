@@ -23,18 +23,27 @@ class GameContainer extends Component {
         //   };
     }
 
+    quitGame = () => {
+        const gameId = this.props.match.params.id
+        console.log(gameId)
+    }
+
     render() {
-        if (!this.state.startGame) return "Waiting for another player..."
+        const player1 = this.props.currentGame.player1 || "New Player"
+        const player2 = this.props.currentGame.player2 || "New Player"
+        
+        if (!this.state.startGame) return 
         return (
             <div>
-                
+                {!this.state.startGame ? "Waiting for another player..." : `Game: ${player1} with ${player2}` }
+                <button onClick={this.quitGame()}>Quit game</button>
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => ({
-    
+    currentGame: state.currentGame
 })
 
 const mapDispatchToProps = {

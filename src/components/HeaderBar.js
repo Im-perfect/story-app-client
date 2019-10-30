@@ -4,10 +4,17 @@ import { Link, withRouter } from "react-router-dom";
 import { signout } from "../actions/player";
 
 class HeaderBar extends React.Component {
-
-  signOut = (event) => {
+  signOut = event => {
     this.props.signout();
-    this.props.history.push('/')
+    this.quitGame();
+    this.props.history.push("/");
+  };
+
+  quitGame = () => {
+    if(this.props.gameId) {
+      console.log("quit game", this.props.gameId);
+      //this.props.quit()
+    } else return
   };
 
   render() {
@@ -35,10 +42,13 @@ class HeaderBar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  signedIn: !!state.currentPlayer
+  signedIn: !!state.currentPlayer,
+  gameId: state.currentGame.id || null
 });
 
-export default withRouter(connect(
-  mapStateToProps,
-  { signout }
-)(HeaderBar));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { signout }
+  )(HeaderBar)
+);
