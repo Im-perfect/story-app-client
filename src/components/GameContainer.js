@@ -32,7 +32,6 @@ class GameContainer extends Component {
         const player1 = this.props.currentGame.player1 || "New Player"
         const player2 = this.props.currentGame.player2 || "New Player"
         
-        if (!this.state.startGame) return 
         return (
             <div>
                 {!this.state.startGame ? "Waiting for another player..." : `Game: ${player1} with ${player2}` }
