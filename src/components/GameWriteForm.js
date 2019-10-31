@@ -6,7 +6,10 @@ import { connect } from "react-redux";
 class GameWriteForm extends React.Component {
   state = {
     message: "",
-    charCount: 255
+    charCount: 255,
+    placeholder: this.props.disabled
+      ? "Your co-writer's turn now"
+      : "Your turn to write the next line"
   };
 
   onSubmit = event => {
@@ -44,7 +47,7 @@ class GameWriteForm extends React.Component {
             rows="4"
             cols="50"
             type="text"
-            placeholder="Type your next line here"
+            placeholder={this.state.placeholder}
             name="messageForm"
             onChange={this.onChange}
             value={this.state.message}
