@@ -5,6 +5,7 @@ import { baseUrl } from "../actions/url";
 import GameWriteForm from "./GameWriteForm";
 
 class GameContainer extends Component {
+
   state = {
     startGame: false,
     messages: []
@@ -28,6 +29,11 @@ class GameContainer extends Component {
       this.props.addMessages(game.texts);
     };
   }
+
+    quitGame = () => {
+        const gameId = this.props.match.params.id
+        console.log(gameId)
+    }
 
   render() {
     const title = this.props.currentGame.storyTitle || "New Title";
@@ -55,6 +61,7 @@ class GameContainer extends Component {
             ) : <GameWriteForm gameId={this.props.match.params.id} disabled={true} />}
           </div>
         )}
+      <button onClick={this.quitGame()}>Quit game</button>
       </div>
     );
   }
