@@ -18,10 +18,8 @@ class GameContainer extends Component {
     this.source.onmessage = event => {
       const game = JSON.parse(event.data);
       console.log("GAME", game);
-        console.log(this.props.currentGame)
-      if (this.props.currentGame === {}) {
-        this.props.setGame(game);
-      }
+      console.log("CURRENTGAME", this.props.currentGame);
+      this.props.setGame(game);
 
       this.setState({
         startGame: game.player1 && game.player2 ? true : false,
@@ -48,7 +46,9 @@ class GameContainer extends Component {
                 <li key={message.id}>{message.text}</li>
               ))}
             </ul>
-            <GameWriteForm gameId={this.props.match.params.id} />
+            {this.props.me === this.props.playerTurn ? (
+              <GameWriteForm gameId={this.props.match.params.id} />
+            ) : null}
           </div>
         )}
       </div>
@@ -58,7 +58,9 @@ class GameContainer extends Component {
 
 const mapStateToProps = state => ({
   currentGame: state.currentGame,
-  messages: state.messages
+  messages: state.messages,
+  playerTurn: state.playerTurn,
+  me: state.me
 });
 
 const mapDispatchToProps = {

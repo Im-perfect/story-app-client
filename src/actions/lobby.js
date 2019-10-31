@@ -29,7 +29,7 @@ export const join = (gameId, playerJWT) => (dispatch, getState) => {
     .then(res => {
       //console.log("res.body", res.body);
       dispatch({
-        type: ADD_LOBBY,
+        type: "JOIN_LOBBY",
         payload: res.body
       });
       //console.log("body id", res.body.id);
