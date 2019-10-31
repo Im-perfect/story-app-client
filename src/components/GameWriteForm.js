@@ -5,7 +5,11 @@ import { connect } from "react-redux";
 
 class GameWriteForm extends React.Component {
   state = {
-    message: ""
+    message: "",
+    charCount: 255,
+    placeholder: this.props.disabled
+      ? "Your co-writer's turn now"
+      : "Your turn to write the next line"
   };
 
   onSubmit = event => {
@@ -21,29 +25,35 @@ class GameWriteForm extends React.Component {
         .catch(error => console.log(error));
 
       this.setState({
-        message: ""
+        message: "",
+        charCount: 255
       });
     }
   };
 
   onChange = event => {
     this.setState({
-      message: event.target.value
+      message: event.target.value,
+      charCount: this.state.charCount - 1
     });
   };
 
   render() {
     return (
       <div>
+        <p>{this.state.charCount} character(s) left</p>
         <form onSubmit={this.onSubmit}>
-          <input
+          <textarea
+            rows="4"
+            cols="50"
             type="text"
-            placeholder="Type your next line here"
+            placeholder={this.state.placeholder}
             name="messageForm"
             onChange={this.onChange}
             value={this.state.message}
             disabled={this.props.disabled}
-          ></input>
+            maxLength="255"
+          ></textarea>
           <input
             type="submit"
             value="Submit"
