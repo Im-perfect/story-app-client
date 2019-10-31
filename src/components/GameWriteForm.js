@@ -41,8 +41,9 @@ class GameWriteForm extends React.Component {
             name="messageForm"
             onChange={this.onChange}
             value={this.state.message}
+            disabled={this.props.disabled}
           ></input>
-          <input type="submit" value="Submit"></input>
+          <input type="submit" value="Submit" disabled={this.props.disabled}></input>
         </form>
       </div>
     );

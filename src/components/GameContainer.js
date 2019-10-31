@@ -51,8 +51,8 @@ class GameContainer extends Component {
               ))}
             </ul>
             {this.props.me === this.props.playerTurn ? (
-              <GameWriteForm gameId={this.props.match.params.id} />
-            ) : null}
+              <GameWriteForm gameId={this.props.match.params.id} disabled={false} />
+            ) : <GameWriteForm gameId={this.props.match.params.id} disabled={true} />}
           </div>
         )}
       </div>
