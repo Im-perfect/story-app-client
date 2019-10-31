@@ -25,13 +25,13 @@ class Lobby extends React.Component {
 
   renderGame = game => (
     <li key={game.id}>
-      <p>{game.name}</p>
-      {/* <h3>{game.title}</h3>
-      <p>{game.description}</p> */}
+      <p>Room: {game.name}</p>
+      <h3>{game.storyTitle}</h3>
+      <p>{game.storyDescription}</p>
       {game.status === "waiting" ? (
         <button onClick={() => this.joinGame(game.id)}>Join</button>
       ) : (
-        <h3>FULL</h3>
+        <h5>FULL</h5>
       )}
     </li>
   );
@@ -51,7 +51,7 @@ class Lobby extends React.Component {
     if (!this.props.isLoggedIn) return null;
     return (
       <div>
-        <h1>Lobby</h1>
+        <h2>Choose a lobby to join</h2>
         <ul>{this.props.games.map(this.renderGame)}</ul>
         <button onClick={this.handleAddLobby}>
           <span>+</span>Create a new game

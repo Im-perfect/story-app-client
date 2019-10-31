@@ -40,15 +40,19 @@ class GameContainer extends Component {
           "Waiting for another player..."
         ) : (
           <div>
-            {`Story title: ${title} ${player1} with ${player2}`}
+            <h5>Room name: {this.props.currentGame.name}</h5>
+            <h1>{`Story title: ${title}`}</h1>
+            <h4>{`${player1} with ${player2}`}</h4>
+            <p>{this.props.currentGame.storyDescription}</p>
+
             <ul>
               {this.props.messages.map(message => (
                 <li key={message.id}>{message.text}</li>
               ))}
             </ul>
             {this.props.me === this.props.playerTurn ? (
-              <GameWriteForm gameId={this.props.match.params.id} />
-            ) : null}
+              <GameWriteForm gameId={this.props.match.params.id} disabled={false} />
+            ) : <GameWriteForm gameId={this.props.match.params.id} disabled={true} />}
           </div>
         )}
       </div>
