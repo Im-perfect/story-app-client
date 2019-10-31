@@ -11,10 +11,11 @@ class HeaderBar extends React.Component {
   };
 
   quitGame = () => {
-    if(this.props.gameId) {
+    if (this.props.gameId) {
       console.log("quit game", this.props.gameId);
-      //this.props.quit()
-    } else return
+      this.props.quit(this.props.gameId);
+      this.props.history.push("/");
+    } else return;
   };
 
   render() {

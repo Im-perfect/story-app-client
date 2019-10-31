@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setGame, addMessages } from "../actions/game";
+import { quit } from "../actions/lobby";
 import { baseUrl } from "../actions/url";
 import GameWriteForm from "./GameWriteForm";
 
 class GameContainer extends Component {
-
   state = {
     startGame: false,
     messages: []
@@ -30,10 +30,11 @@ class GameContainer extends Component {
     };
   }
 
-    quitGame = () => {
-        const gameId = this.props.match.params.id
-        console.log(gameId)
-    }
+  quitGame = () => {
+    const gameId = this.props.match.params.id;
+    this.props.quit(gameId);
+    this.props.history.push("/game");
+  };
 
   render() {
     const title = this.props.currentGame.storyTitle || "New Title";
@@ -57,11 +58,19 @@ class GameContainer extends Component {
               ))}
             </ul>
             {this.props.me === this.props.playerTurn ? (
-              <GameWriteForm gameId={this.props.match.params.id} disabled={false} />
-            ) : <GameWriteForm gameId={this.props.match.params.id} disabled={true} />}
+              <GameWriteForm
+                gameId={this.props.match.params.id}
+                disabled={false}
+              />
+            ) : (
+              <GameWriteForm
+                gameId={this.props.match.params.id}
+                disabled={true}
+              />
+            )}
           </div>
         )}
-      <button onClick={this.quitGame()}>Quit game</button>
+        <button onClick={this.quitGame}>Quit game</button>
       </div>
     );
   }
@@ -76,7 +85,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   setGame,
-  addMessages
+  addMessages,
+  quit
 };
 
 export default connect(
