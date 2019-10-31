@@ -26,23 +26,19 @@ const lobby = [
 const reducer = (state = [], action = {}) => {
   switch (action.type) {
     case "ADD_LOBBY":
-      return [
-        ...state,
-        action.payload
-        // {
-        //   id: 1,
-        //   name: "test name111",
-        //   player1: 5,
-        //   player2: null,
-        //   status: "waiting",
-        //   story: {
-        //     title: action.gameInfo.title,
-        //     description: action.gameInfo.description
-        //   }
-        // }
-      ];
+      return [...state, action.payload];
+    case "JOIN_LOBBY":
+      return [...state, action.payload];
     case "ADD_LOBBIES":
-      return action.payload;
+      const lobbyById = action.payload.sort((a, b) => {
+        var idA = a.id,
+          idB = b.id;
+        // Compare the 2 ids
+        if (idA < idB) return -1;
+        if (idA > idB) return 1;
+        return 0;
+      });
+      return lobbyById;
     case "SIGN_OUT":
       return [];
     default:
