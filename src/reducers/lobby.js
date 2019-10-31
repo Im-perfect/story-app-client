@@ -30,7 +30,15 @@ const reducer = (state = [], action = {}) => {
     case "JOIN_LOBBY":
       return [...state, action.payload];
     case "ADD_LOBBIES":
-      return action.payload;
+      const lobbyById = action.payload.sort((a, b) => {
+        var idA = a.id,
+          idB = b.id;
+        // Compare the 2 ids
+        if (idA < idB) return -1;
+        if (idA > idB) return 1;
+        return 0;
+      });
+      return lobbyById;
     case "SIGN_OUT":
       return [];
     default:

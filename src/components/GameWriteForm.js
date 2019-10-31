@@ -10,19 +10,20 @@ class GameWriteForm extends React.Component {
 
   onSubmit = event => {
     event.preventDefault();
-    request
-      .post(`${baseUrl}/texts`)
-      .set("playerJWT", this.props.currentPlayer)
-      .send({
-        lobbyId: this.props.gameId,
-        text: this.state.message
-      })
-      .then(() => {
-        this.setState({
-          message: ""
-        });
-      })
-      .catch(error => console.log(error));
+    if (this.state.message) {
+      request
+        .post(`${baseUrl}/texts`)
+        .set("playerJWT", this.props.currentPlayer)
+        .send({
+          lobbyId: this.props.gameId,
+          text: this.state.message
+        })
+        .catch(error => console.log(error));
+
+      this.setState({
+        message: ""
+      });
+    }
   };
 
   onChange = event => {
@@ -41,8 +42,13 @@ class GameWriteForm extends React.Component {
             name="messageForm"
             onChange={this.onChange}
             value={this.state.message}
+            disabled={this.props.disabled}
           ></input>
-          <input type="submit" value="Submit"></input>
+          <input
+            type="submit"
+            value="Submit"
+            disabled={this.props.disabled}
+          ></input>
         </form>
       </div>
     );

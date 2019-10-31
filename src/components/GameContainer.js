@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { setGame, addMessages } from "../actions/game";
+import { quit } from "../actions/lobby";
 import { baseUrl } from "../actions/url";
 import GameWriteForm from "./GameWriteForm";
 
@@ -29,6 +31,12 @@ class GameContainer extends Component {
     };
   }
 
+  quitGame = () => {
+    const gameId = this.props.match.params.id;
+    this.props.quit(gameId);
+    this.props.history.push("/game");
+  };
+
   render() {
     const title = this.props.currentGame.storyTitle || "New Title";
     const player1 = this.props.currentGame.player1 || "New Player";
@@ -36,19 +44,44 @@ class GameContainer extends Component {
 
     return (
       <div>
-        {!this.state.startGame ? (
-          "Waiting for another player..."
+        {this.props.currentGame.player1 === null &&
+        this.props.currentGame.player2 === null ? (
+          <div>
+            <p>Your co-writer quit the game.</p>
+            <Link to="/game">
+              <button>Back to lobby list</button>
+            </Link>
+          </div>
         ) : (
           <div>
-            {`Story title: ${title} ${player1} with ${player2}`}
-            <ul>
-              {this.props.messages.map(message => (
-                <li key={message.id}>{message.text}</li>
-              ))}
-            </ul>
-            {this.props.me === this.props.playerTurn ? (
-              <GameWriteForm gameId={this.props.match.params.id} />
-            ) : null}
+            {!this.state.startGame ? (
+              "Waiting for another player..."
+            ) : (
+              <div>
+                <h5>Room name: {this.props.currentGame.name}</h5>
+                <h1>{`Story title: ${title}`}</h1>
+                <h4>{`${player1} with ${player2}`}</h4>
+                <p>{this.props.currentGame.storyDescription}</p>
+
+                <ul>
+                  {this.props.messages.map(message => (
+                    <li key={message.id}>{message.text}</li>
+                  ))}
+                </ul>
+                {this.props.me === this.props.playerTurn ? (
+                  <GameWriteForm
+                    gameId={this.props.match.params.id}
+                    disabled={false}
+                  />
+                ) : (
+                  <GameWriteForm
+                    gameId={this.props.match.params.id}
+                    disabled={true}
+                  />
+                )}
+              </div>
+            )}
+            <button onClick={this.quitGame}>Quit game</button>
           </div>
         )}
       </div>
@@ -65,7 +98,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   setGame,
-  addMessages
+  addMessages,
+  quit
 };
 
 export default connect(
