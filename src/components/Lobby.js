@@ -48,7 +48,7 @@ class Lobby extends React.Component {
   };
 
   render() {
-    if (!this.props.isLoggedIn) return null;
+    if (!this.props.isLoggedIn) return "Loading...";
     return (
       <div>
         <h2>Choose a lobby to join</h2>
