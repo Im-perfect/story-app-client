@@ -47,3 +47,12 @@ export const fillRandom = async () => {
   const res = await request.get(`${baseUrl}/description/random`);
   return res.body;
 };
+
+export const quit = lobbyId => (dispatch, getState) => {
+  request
+    .put(`${baseUrl}/lobbies/${lobbyId}/quit`)
+    .then(res => {
+      console.log(res);
+    })
+    .catch(console.error);
+};

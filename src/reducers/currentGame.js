@@ -2,6 +2,8 @@ const reducer = (state = {}, action = {}) => {
   switch (action.type) {
     case "FETCH_GAME":
       return action.payload;
+    case "UPDATE_CURRENT_GAME":
+      return action.payload;
     case "ADD_LOBBY":
       return action.payload;
     case "JOIN_LOBBY":
