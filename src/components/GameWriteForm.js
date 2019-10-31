@@ -36,14 +36,15 @@ class GameWriteForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <input
+          <textarea
+            rows="4" cols="50"
             type="text"
             placeholder="Type your next line here"
             name="messageForm"
             onChange={this.onChange}
             value={this.state.message}
             disabled={this.props.disabled}
-          ></input>
+          ></textarea>
           <input
             type="submit"
             value="Submit"
