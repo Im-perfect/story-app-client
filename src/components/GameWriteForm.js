@@ -40,7 +40,7 @@ class GameWriteForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="write-form">
         <p>{this.state.charCount} character(s) left</p>
         <form onSubmit={this.onSubmit}>
           <textarea
@@ -58,6 +58,7 @@ class GameWriteForm extends React.Component {
             type="submit"
             value="Submit"
             disabled={this.props.disabled}
+            className="button primary"
           ></input>
         </form>
       </div>

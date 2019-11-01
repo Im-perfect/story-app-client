@@ -128,7 +128,7 @@ body {
   position: absolute;
   top: -25px;
   font-family: "Abril Fatface", cursive;
-  font-size: 36px; 
+  font-size: 36px;
 }
 
 .lobbyContainer ul li h3 {
@@ -225,4 +225,56 @@ hr {
 .game-container {
   padding: 40px;
   text-align: center;
+  position: relative;
+}
+
+.write-form {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0 30px 0;
+  position: relative;
+}
+
+.write-form p{
+    position: absolute;
+    top: -26px;
+    left: 60px;
+    font-size: 12px;
+}
+
+.write-form form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+textarea {
+  resize: none;
+  height: 200px;
+  padding: 40px;
+  font-size: 16px;
+  font-weight: 300;
+  margin-right: 20px;
+}
+
+.game-content {
+    padding: 20px;
+}
+
+.game-content h1 {
+    margin: 5px 0;
+    font-family: "Abril Fatface", cursive;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.game-content h5 {
+    margin-bottom: 40px;
+}
+
+.desc {
+    text-align: left;
+    line-height: 30px;
+    padding: 30px;
+    border-top: 1px solid #dadada;
 }
