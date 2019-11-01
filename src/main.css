@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:300,400|Oswald:300,400&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|EB+Garamond|Montserrat:300,400|Oswald:300,400&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Cantata+One|Open+Sans&display=swap");
 
 *,
@@ -8,6 +8,10 @@ body {
   box-sizing: border-box;
   color: #1a1a1a;
   font-family: "Montserrat", sans-serif;
+}
+
+*:focus {
+    outline: none;
 }
 
 .header-bar {
@@ -231,14 +235,13 @@ hr {
 .write-form {
   display: flex;
   flex-direction: column;
-  margin: 100px 0 30px 0;
+  margin: 100px 20% 30px 20%;
   position: relative;
 }
 
 .write-form p{
     position: absolute;
     top: -26px;
-    left: 60px;
     font-size: 12px;
 }
 
@@ -251,10 +254,11 @@ hr {
 textarea {
   resize: none;
   height: 200px;
-  padding: 40px;
+  padding: 30px;
   font-size: 16px;
   font-weight: 300;
   margin-right: 20px;
+  flex: 50%;
 }
 
 .game-content {
@@ -273,8 +277,19 @@ textarea {
 }
 
 .desc {
-    text-align: left;
     line-height: 30px;
     padding: 30px;
     border-top: 1px solid #dadada;
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+}
+
+.story-line-container {
+
+}
+
+.story-line-container li {
+    list-style: none;
+    padding: 8px 0;
+    font-family: 'EB Garamond', serif;
 }
