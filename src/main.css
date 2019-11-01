@@ -70,6 +70,9 @@ body {
   background-color: #fcd6cf;
 }
 
+.button.primary.left {
+    margin: 15px 0 0 0;
+}
 .button.primary.light {
   font-size: 10px;
   padding: 8px 20px;
