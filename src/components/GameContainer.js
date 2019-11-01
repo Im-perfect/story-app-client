@@ -15,8 +15,6 @@ class GameContainer extends Component {
   source = new EventSource(`${baseUrl}/lobbies/${this.props.match.params.id}`); //setup the stream!!!
 
   componentDidMount() {
-    const gameId = this.props.match.params.id;
-
     this.source.onmessage = event => {
       const game = JSON.parse(event.data);
       console.log("GAME", game);

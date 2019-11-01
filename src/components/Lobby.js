@@ -52,10 +52,10 @@ class Lobby extends React.Component {
     if (!this.props.isLoggedIn) return "Loading...";
     return (
       <div className="lobbyContainer">
-        <h2>Choose a lobby to join</h2>
+        <h2>Choose a room to join</h2>
         <p className="small">OR</p>
         <button onClick={this.handleAddLobby} className="button primary">
-          <span>+ </span>Create a new game
+          <span>+ </span>Create a new room
         </button>
         <ul>{this.props.games.map(this.renderGame)}</ul>
       </div>
