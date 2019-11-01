@@ -60,27 +60,25 @@ class GameContainer extends Component {
                 <p>Story title</p>
                 <h1>{`${title}`}</h1>
                 {/* <h4>{`${player1} with ${player2}`}</h4> */}
-                <p className="desc">{this.props.currentGame.storyDescription}</p>
+                <p className="desc">
+                  {this.props.currentGame.storyDescription}
+                </p>
 
                 <ul className="story-line-container">
                   {this.props.messages.map(message => (
                     <li key={message.id}>{message.text}</li>
                   ))}
                 </ul>
-                {this.props.me === this.props.playerTurn ? (
-                  <GameWriteForm
-                    gameId={this.props.match.params.id}
-                    disabled={false}
-                  />
-                ) : (
-                  <GameWriteForm
-                    gameId={this.props.match.params.id}
-                    disabled={true}
-                  />
-                )}
+
+                <GameWriteForm
+                  gameId={this.props.match.params.id}
+                  disabled={this.props.me === this.props.playerTurn}
+                />
               </div>
             )}
-            <button onClick={this.quitGame} className="button primary">Quit game</button>
+            <button onClick={this.quitGame} className="button primary">
+              Quit game
+            </button>
           </div>
         )}
       </div>
