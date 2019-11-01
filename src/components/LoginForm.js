@@ -4,19 +4,34 @@ import React from "react";
 export default class LoginForm extends React.Component {
   render() {
     return (
-      <div>
+      <div className="login-form">
         <form onSubmit={this.props.onSubmit}>
           <label>
-            Username:
-            <input type="text" name="username" value={this.props.login.username} onChange={this.props.onChange} />
+            <input
+              type="text"
+              name="username"
+              value={this.props.login.username}
+              onChange={this.props.onChange}
+              className="input"
+              placeholder="USERNAME"
+            />
           </label>
           <label>
-            Password:
-            <input type="password" name="password" value={this.props.login.password} onChange={this.props.onChange} />
+            <input
+              type="password"
+              name="password"
+              value={this.props.login.password}
+              onChange={this.props.onChange}
+              className="input"
+              placeholder="PASSWORD"
+            />
           </label>
-          <input type="submit" value="Submit"></input>
+          <input
+            type="submit"
+            value="Submit"
+            className="button primary"
+          ></input>
         </form>
-        <hr />
       </div>
     );
   }

@@ -50,11 +50,12 @@ class Lobby extends React.Component {
   render() {
     if (!this.props.isLoggedIn) return "Loading...";
     return (
-      <div>
+      <div className="lobbyContainer">
         <h2>Choose a lobby to join</h2>
+        <p className="small">OR</p>
         <ul>{this.props.games.map(this.renderGame)}</ul>
-        <button onClick={this.handleAddLobby}>
-          <span>+</span>Create a new game
+        <button onClick={this.handleAddLobby} className="button primary">
+          <span>+ </span>Create a new game
         </button>
       </div>
     );
