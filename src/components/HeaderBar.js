@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import { signout } from "../actions/player";
+import { quit } from "../actions/lobby";
 
 class HeaderBar extends React.Component {
   signOut = event => {
@@ -50,6 +51,6 @@ const mapStateToProps = state => ({
 export default withRouter(
   connect(
     mapStateToProps,
-    { signout }
+    { signout, quit }
   )(HeaderBar)
 );
