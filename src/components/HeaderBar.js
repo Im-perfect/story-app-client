@@ -20,23 +20,23 @@ class HeaderBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="header-bar">
         <h1>
-          <Link to="/">Story App</Link>
+          <Link to="/"><span>&#10084;</span>{" "}Storylike{" "}<span>&#10084;</span></Link>
         </h1>
         {this.props.signedIn ? (
-          <button onClick={this.signOut}>Sign out</button>
+          <button onClick={this.signOut} className="button">Sign out</button>
         ) : (
           <div>
             <Link to="/signup">
-              <button>Sign up</button>
+              <button className="button">Sign up</button>
             </Link>
             <Link to="/login">
-              <button>Log in</button>
+              <button className="button">Log in</button>
             </Link>
           </div>
         )}
-        <hr />
+        <div className="bg-block"></div>
       </div>
     );
   }

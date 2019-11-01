@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import { login } from "../actions/player";
+import Home from './Home'
 
 class LoginFormContainer extends React.Component {
   state = {
@@ -38,6 +39,7 @@ class LoginFormContainer extends React.Component {
           onSubmit={this.onSubmit}
           login={this.state}
         />
+        <Home />
       </div>
     );
   }

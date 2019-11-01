@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import { signup } from "../actions/player";
+import Home from './Home'
 
 class SignupFormContainer extends React.Component {
   state = {
@@ -24,7 +25,7 @@ class SignupFormContainer extends React.Component {
       password: ""
     });
     //if signup success
-    this.props.history.push("/game");
+    this.props.history.push("/");
   };
 
   render() {
@@ -38,6 +39,7 @@ class SignupFormContainer extends React.Component {
           onSubmit={this.onSubmit}
           login={this.state}
         />
+        <Home />
       </div>
     );
   }

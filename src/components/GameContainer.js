@@ -43,7 +43,7 @@ class GameContainer extends Component {
     const player2 = this.props.currentGame.player2 || "New Player";
 
     return (
-      <div>
+      <div className="game-container">
         {this.props.currentGame.player1 === null &&
         this.props.currentGame.player2 === null ? (
           <div>

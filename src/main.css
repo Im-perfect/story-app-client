@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:300,400|Oswald:300,400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cantata+One|Open+Sans&display=swap");
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #1a1a1a;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header-bar {
+  background: #1a1a1a;
+  color: white;
+  padding: 30px 40px;
+  font-family: "Cantata One", serif;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-bar h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+.header-bar h1 a span {
+  color: white;
+  text-decoration: none;
+  font-size: 50%;
+}
+
+.header-bar .bg-block {
+  width: 40%;
+  background: #ffc3b9;
+  height: 100%;
+  position: absolute;
+  top: 300px;
+  left: -40px;
+}
+
+.button {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-block;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+
+.button:hover {
+  background: #ffc3b9;
+}
+
+.button.primary {
+  background-color: #ffc3b9;
+  color: #1a1a1a;
+  margin: 5px;
+}
+.button.primary:hover {
+  background-color: #fcd6cf;
+}
+
+.login-form {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 60px;
+}
+
+.login-form .input {
+  height: 42px;
+  font-size: 12px;
+  margin: 0 5px;
+  padding: 10px;
+  color: #5f5f5f;
+}
+
+.lobbyContainer {
+  text-align: center;
+  padding: 40px;
+}
+
+.lobbyContainer h2 {
+  margin-bottom: 25px;
+  font-family: "Cantata One", serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.small {
+  font-size: 80%;
+  margin-bottom: 15px;
+}
+
+.lobbyContainer ul {
+  display: flex;
+}
+
+.lobbyContainer ul li {
+  flex: 25%;
+  margin: 20px;
+  background: #ffc3b9;
+}
+
+.image-1 {
+  width: 45%;
+  position: absolute;
+  right: 0;
+}
+
+.image-2 {
+  position: absolute;
+  width: 45%;
+  top: 230px;
+  left: 15%;
+}
+
+.home-heading {
+  position: absolute;
+  background: white;
+  padding: 35px;
+  width: 40%;
+  top: 285px;
+  right: 10%;
+  min-height: 235px;
+}
+
+.home-heading h2 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.home-heading p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 180%;
+}
+
+.quote {
+  width: 50%;
+  top: 700px;
+  left: 50%;
+  position: absolute;
+  font-family: "Abril Fatface", cursive;
+  letter-spacing: 1px;
+  text-align: center;
+  transform: translate(-50%, 0);
+  margin-bottom: 40px;
+}
+
+.quote h2 {
+  background: #1a1a1a;
+  color: white;
+  line-height: 52px;
+  box-shadow: 5px 0 0 #000, -5px 0 0 #000;
+  padding: 8px 0;
+  display: inline;
+}
+
+.create-game-container {
+  margin: 40px;
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.input {
+  height: 42px;
+  font-size: 12px;
+  margin: 10px 5px;
+  padding: 10px;
+  color: #5f5f5f;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-top: 1px solid #dadada;
+}
