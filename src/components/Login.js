@@ -38,6 +38,7 @@ class LoginFormContainer extends React.Component {
           onChange={this.onChange}
           onSubmit={this.onSubmit}
           login={this.state}
+          formType={"log in"}
         />
         <Home />
       </div>

@@ -38,6 +38,7 @@ class SignupFormContainer extends React.Component {
           onChange={this.onChange}
           onSubmit={this.onSubmit}
           login={this.state}
+          formType={"sign up"}
         />
         <Home />
       </div>
