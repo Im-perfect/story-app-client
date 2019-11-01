@@ -23,13 +23,14 @@ class Lobby extends React.Component {
     };
   }
 
-  renderGame = game => (
+  renderGame = (game, index) => (
     <li key={game.id}>
+      <h1>{index+1}</h1>
       <p>Room: {game.name}</p>
       <h3>{game.storyTitle}</h3>
       <p>{game.storyDescription}</p>
       {game.status === "waiting" ? (
-        <button onClick={() => this.joinGame(game.id)}>Join</button>
+        <button onClick={() => this.joinGame(game.id)} className="button primary light">Join</button>
       ) : (
         <h5>FULL</h5>
       )}
@@ -41,7 +42,7 @@ class Lobby extends React.Component {
   };
 
   joinGame = gameId => {
-      (async () => {
+    (async () => {
       await this.props.join(gameId, this.props.playerJWT);
       this.props.history.push(`/game/${gameId}`);
     })();
@@ -51,12 +52,12 @@ class Lobby extends React.Component {
     if (!this.props.isLoggedIn) return "Loading...";
     return (
       <div className="lobbyContainer">
-        <h2>Choose a lobby to join</h2>
+        <h2>Choose a room to join</h2>
         <p className="small">OR</p>
-        <ul>{this.props.games.map(this.renderGame)}</ul>
         <button onClick={this.handleAddLobby} className="button primary">
-          <span>+ </span>Create a new game
+          <span>+ </span>Create a new room
         </button>
+        <ul>{this.props.games.map(this.renderGame)}</ul>
       </div>
     );
   }

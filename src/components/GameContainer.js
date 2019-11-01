@@ -15,8 +15,6 @@ class GameContainer extends Component {
   source = new EventSource(`${baseUrl}/lobbies/${this.props.match.params.id}`); //setup the stream!!!
 
   componentDidMount() {
-    const gameId = this.props.match.params.id;
-
     this.source.onmessage = event => {
       const game = JSON.parse(event.data);
       console.log("GAME", game);
@@ -49,7 +47,7 @@ class GameContainer extends Component {
           <div>
             <p>Your co-writer quit the game.</p>
             <Link to="/game">
-              <button>Back to lobby list</button>
+              <button className="button primary">Back to lobby list</button>
             </Link>
           </div>
         ) : (
@@ -57,31 +55,30 @@ class GameContainer extends Component {
             {!this.state.startGame ? (
               "Waiting for another player..."
             ) : (
-              <div>
+              <div className="game-content">
                 <h5>Room name: {this.props.currentGame.name}</h5>
-                <h1>{`Story title: ${title}`}</h1>
-                <h4>{`${player1} with ${player2}`}</h4>
-                <p>{this.props.currentGame.storyDescription}</p>
+                <p>Story title</p>
+                <h1>{`${title}`}</h1>
+                {/* <h4>{`${player1} with ${player2}`}</h4> */}
+                <p className="desc">
+                  {this.props.currentGame.storyDescription}
+                </p>
 
-                <ul>
+                <ul className="story-line-container">
                   {this.props.messages.map(message => (
                     <li key={message.id}>{message.text}</li>
                   ))}
                 </ul>
-                {this.props.me === this.props.playerTurn ? (
-                  <GameWriteForm
-                    gameId={this.props.match.params.id}
-                    disabled={false}
-                  />
-                ) : (
-                  <GameWriteForm
-                    gameId={this.props.match.params.id}
-                    disabled={true}
-                  />
-                )}
+
+                <GameWriteForm
+                  gameId={this.props.match.params.id}
+                  disabled={this.props.me === this.props.playerTurn}
+                />
               </div>
             )}
-            <button onClick={this.quitGame}>Quit game</button>
+            <button onClick={this.quitGame} className="button primary">
+              Quit game
+            </button>
           </div>
         )}
       </div>

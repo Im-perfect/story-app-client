@@ -86,14 +86,14 @@ class CreateGameForm extends Component {
           </label>
           <br />
           <label>
-            Once upon a time, in{" "}
+            Once upon a time in{" "}
             <input
               type="text"
               name="place"
               value={this.state.place}
               onChange={this.onChange}
               className="input"
-              placeholder="a place"
+              placeholder="place"
             />
           </label>
           <label>
@@ -117,7 +117,7 @@ class CreateGameForm extends Component {
               value={this.state.verb}
               onChange={this.onChange}
               className="input"
-              placeholder="a verb"
+              placeholder="verb"
             />
           </label>
           <label>
@@ -129,11 +129,11 @@ class CreateGameForm extends Component {
               value={this.state.noun}
               onChange={this.onChange}
               className="input"
-              placeholder="a noun"
+              placeholder="noun"
             />
             .
           </label>
-          <br/>
+          <br />
           <input type="submit" value="Submit" className="button primary" />
         </form>
         <button onClick={this.handleRandom} className="button primary">

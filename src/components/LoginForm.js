@@ -28,7 +28,7 @@ export default class LoginForm extends React.Component {
           </label>
           <input
             type="submit"
-            value="Submit"
+            value={this.props.formType}
             className="button primary"
           ></input>
         </form>
