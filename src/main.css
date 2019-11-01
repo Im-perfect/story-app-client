@@ -7,6 +7,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: #1a1a1a;
+  font-family: "Montserrat", sans-serif;
 }
 
 .header-bar {
@@ -32,7 +33,7 @@ body {
 }
 
 .header-bar .bg-block {
-  width: 45%;
+  width: 40%;
   background: #ffc3b9;
   height: 100%;
   position: absolute;
@@ -82,7 +83,16 @@ body {
 }
 
 .lobbyContainer h2 {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  font-family: "Cantata One", serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.small {
+  font-size: 80%;
+  margin-bottom: 15px;
 }
 
 .lobbyContainer ul {
@@ -152,4 +162,26 @@ body {
   box-shadow: 5px 0 0 #000, -5px 0 0 #000;
   padding: 8px 0;
   display: inline;
+}
+
+.create-game-container {
+    margin: 40px;
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.input {
+  height: 42px;
+  font-size: 12px;
+  margin: 10px 5px;
+  padding: 10px;
+  color: #5f5f5f;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  border-top: 1px solid #dadada;
 }

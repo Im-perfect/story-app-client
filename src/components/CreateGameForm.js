@@ -60,7 +60,7 @@ class CreateGameForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="create-game-container">
         <form onSubmit={this.onSubmit}>
           <label>
             Room Name
@@ -69,62 +69,76 @@ class CreateGameForm extends Component {
               name="name"
               value={this.state.name}
               onChange={this.onChange}
+              className="input"
             />
           </label>
+          <hr />
           <br />
           <label>
-            Story Title
+            <strong>Story Title</strong>
             <input
               type="text"
               name="title"
               value={this.state.title}
               onChange={this.onChange}
+              className="input"
             />
           </label>
-          <p>Once upon a time, </p>
+          <br />
           <label>
-            in
+            Once upon a time, in{" "}
             <input
               type="text"
               name="place"
               value={this.state.place}
               onChange={this.onChange}
+              className="input"
+              placeholder="a place"
             />
-            (place)
           </label>
           <label>
-            a
+            {" "}
+            a{" "}
             <input
               type="text"
               name="character"
               value={this.state.character}
               onChange={this.onChange}
+              className="input"
+              placeholder="character"
             />
-            (character)
           </label>
           <label>
+            {" "}
             was born to
             <input
               type="text"
               name="verb"
               value={this.state.verb}
               onChange={this.onChange}
+              className="input"
+              placeholder="a verb"
             />
-            (verb)
           </label>
           <label>
-            a
+            {" "}
+            a{" "}
             <input
               type="text"
               name="noun"
               value={this.state.noun}
               onChange={this.onChange}
+              className="input"
+              placeholder="a noun"
             />
-            (noun)
+            .
           </label>
-          <input type="submit" value="Submit" />
+          <br/>
+          <input type="submit" value="Submit" className="button primary" />
         </form>
-        <button onClick={this.handleRandom}>Fill in with random ideas</button>
+        <button onClick={this.handleRandom} className="button primary">
+          Fill in with random ideas
+        </button>
       </div>
     );
   }

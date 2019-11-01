@@ -52,6 +52,7 @@ class Lobby extends React.Component {
     return (
       <div className="lobbyContainer">
         <h2>Choose a lobby to join</h2>
+        <p className="small">OR</p>
         <ul>{this.props.games.map(this.renderGame)}</ul>
         <button onClick={this.handleAddLobby} className="button primary">
           <span>+ </span>Create a new game
