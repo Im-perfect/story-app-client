@@ -62,6 +62,9 @@ body {
   color: #1a1a1a;
   margin: 5px;
 }
+.button.primary:hover {
+  background-color: #fcd6cf;
+}
 
 .login-form {
   display: flex;
@@ -165,7 +168,7 @@ body {
 }
 
 .create-game-container {
-    margin: 40px;
+  margin: 40px;
   padding: 50px;
   text-align: center;
   position: relative;
@@ -181,7 +184,7 @@ body {
 }
 
 hr {
-    margin-top: 10px;
-    margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   border-top: 1px solid #dadada;
 }
