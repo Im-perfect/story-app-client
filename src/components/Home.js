@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-export class Home extends Component {
+class Home extends Component {
   handleWriteNowButton = () => {
       if(this.props.currentPlayer) {this.props.history.push("/game");}
       else {this.props.history.push("/signup");}
