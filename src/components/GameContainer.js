@@ -49,7 +49,7 @@ class GameContainer extends Component {
           <div>
             <p>Your co-writer quit the game.</p>
             <Link to="/game">
-              <button>Back to lobby list</button>
+              <button className="button primary">Back to lobby list</button>
             </Link>
           </div>
         ) : (

@@ -66,6 +66,14 @@ body {
   background-color: #fcd6cf;
 }
 
+.button.primary.light {
+  font-size: 10px;
+  padding: 8px 20px;
+  background-color: white;
+  color: #1a1a1a;
+  margin: 5px;
+}
+
 .login-form {
   display: flex;
   justify-content: flex-end;
@@ -83,6 +91,7 @@ body {
 .lobbyContainer {
   text-align: center;
   padding: 40px;
+  position: relative;
 }
 
 .lobbyContainer h2 {
@@ -100,12 +109,36 @@ body {
 
 .lobbyContainer ul {
   display: flex;
+  margin: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
 .lobbyContainer ul li {
   flex: 25%;
-  margin: 20px;
-  background: #ffc3b9;
+  margin: 30px 15px;
+  background: #f7e3d8;
+  padding: 35px 25px;
+  font-size: 12px;
+  list-style: none;
+  position: relative;
+}
+
+.lobbyContainer ul li h1 {
+  position: absolute;
+  top: -25px;
+  font-family: "Abril Fatface", cursive;
+  font-size: 36px; 
+}
+
+.lobbyContainer ul li h3 {
+  margin: 15px 0;
+  text-transform: uppercase;
+}
+
+.lobbyContainer ul li p {
+  font-weight: 300;
+  margin-bottom: 15px;
 }
 
 .image-1 {
@@ -187,4 +220,9 @@ hr {
   margin-top: 10px;
   margin-bottom: 20px;
   border-top: 1px solid #dadada;
+}
+
+.game-container {
+  padding: 40px;
+  text-align: center;
 }
