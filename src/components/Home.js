@@ -23,12 +23,14 @@ export class Home extends Component {
           <div className="home-heading">
             <h2>Welcome to our app</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            Have you always wanted to write a story together with your friends, or do you dare to collaborate with a random stranger? This is the app for you! Create or join a writing room, take turns in writing a new sentence, and say yes!
             </p>
           </div>
+        </div>
+        <div className="quote">
+          <h2>
+          “The best stories are written together” <br/> - LadyWriter1990
+          </h2>
         </div>
       </div>
     );

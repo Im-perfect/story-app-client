@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400|Oswald:300,400&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:300,400|Oswald:300,400&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Cantata+One|Open+Sans&display=swap");
 
 *,
@@ -25,10 +25,16 @@ body {
   text-decoration: none;
 }
 
+.header-bar h1 a span {
+  color: white;
+  text-decoration: none;
+  font-size: 50%;
+}
+
 .header-bar .bg-block {
   width: 45%;
   background: #ffc3b9;
-  height: 90%;
+  height: 100%;
   position: absolute;
   top: 300px;
   left: -40px;
@@ -113,16 +119,37 @@ body {
 }
 
 .home-heading h2 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .home-heading p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 180%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 180%;
+}
+
+.quote {
+  width: 50%;
+  top: 660px;
+  left: 50%;
+  position: absolute;
+  font-family: "Abril Fatface", cursive;
+  letter-spacing: 1px;
+  text-align: center;
+  transform: translate(-50%, 0);
+  margin-bottom: 40px;
+}
+
+.quote h2 {
+  background: #1a1a1a;
+  color: white;
+  line-height: 52px;
+  box-shadow: 5px 0 0 #000, -5px 0 0 #000;
+  padding: 8px 0;
+  display: inline;
 }

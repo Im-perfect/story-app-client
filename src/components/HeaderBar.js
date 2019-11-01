@@ -22,7 +22,7 @@ class HeaderBar extends React.Component {
     return (
       <div className="header-bar">
         <h1>
-          <Link to="/">Storylike</Link>
+          <Link to="/"><span>&#10084;</span>{" "}Storylike{" "}<span>&#10084;</span></Link>
         </h1>
         {this.props.signedIn ? (
           <button onClick={this.signOut} className="button">Sign out</button>
