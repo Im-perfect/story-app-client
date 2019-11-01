@@ -25,6 +25,15 @@ body {
   text-decoration: none;
 }
 
+.header-bar .bg-block {
+    width: 45%;
+    background:#ffc3b9;
+    height: 90%;
+    position: absolute;
+    top: 300px;
+    left: -40px;
+}
+
 .button {
   border: none;
   background-color: inherit;
@@ -59,4 +68,29 @@ body {
     margin: 0 5px;
     padding: 10px;
     color: #5f5f5f
+}
+
+.lobbyContainer{
+    text-align: center;
+    padding: 40px;
+}
+
+.lobbyContainer h2 {
+    margin-bottom: 30px;
+}
+
+.lobbyContainer ul {
+    display: flex;
+}
+
+.lobbyContainer ul li {
+    flex: 25%;
+    margin: 20px;
+    background: #ffc3b9;
+}
+
+.image {
+    width: 45%;
+    position: absolute;
+    right: 0;
 }

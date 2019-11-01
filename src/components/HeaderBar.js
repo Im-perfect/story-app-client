@@ -36,6 +36,7 @@ class HeaderBar extends React.Component {
             </Link>
           </div>
         )}
+        <div className="bg-block"></div>
       </div>
     );
   }

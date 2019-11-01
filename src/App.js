@@ -7,11 +7,13 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import CreateGameForm from './components/CreateGameForm';
 import GameContainer from './components/GameContainer';
+import Home from "./components/Home"
 
 function App() {
   return (
     <div>
       <HeaderBar />
+      <Route path="/" exact component={Home} />
       <Route path='/signup' exact component={Signup} />
       <Route path='/login' exact component={Login} />
       <Route path='/game' exact component={Lobby} />
