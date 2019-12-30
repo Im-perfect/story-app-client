@@ -34,7 +34,7 @@ class Home extends Component {
             </p>
             <button
               className="button primary left"
-              onClick={this.handleWriteNowButton}
+              // onClick={this.handleWriteNowButton}
             >
               WRITE NOW
             </button>
